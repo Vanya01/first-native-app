@@ -13,7 +13,7 @@ const User=(props)=>{
 
 
     return <View style={[styles.userBox]}>
-        <Text>{item.name} and smth</Text>
+        <Text style={styles.usersWrap} >{item.name} and smth</Text>
         <Button onPress={onPress} title={'user details'}/>
     </View>
 }
@@ -25,9 +25,12 @@ let styles = StyleSheet.create({
         justifyContent:'center',
         textAlign:'center',
     },
-    margins:{
-        margin:10
-
+    usersWrap:{
+       fontWeight:'bold',
+        color:'crimson',
+        textAlign: 'center',
+        paddingTop:20,
+        paddingBottom:20
     },
 
 })

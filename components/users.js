@@ -18,8 +18,9 @@ const Users=(props)=>{
 
 
     return (
-        <View style={[styles.mainBox]}>
+        <View>
       <FlatList
+          style={styles.usersWrap}
           data={users}
           keyExtractor={item => ''+ item.id}
           renderItem={({item})=> <User item={item} nav={navigation}/>}
@@ -30,5 +31,11 @@ const Users=(props)=>{
 export default Users
 
 let styles = StyleSheet.create({
+     usersWrap:{
+     marginTop:50,
+      maxWidth:300,
+       left:50,
+         borderRadius:10
 
+     }
 })
