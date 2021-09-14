@@ -7,7 +7,7 @@ const User=({item})=>{
 
     return (<View style={[styles.userBox,styles.margins]}>
 
-        <Text> <p>{item.name}</p></Text>
+        <Text>{item.name} and smth</Text>
 
     </View>)
 }
