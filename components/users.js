@@ -5,29 +5,30 @@ import getUsers from "../services/services";
 import User from "./user";
 
 
-const Users=()=>{
 
+const Users=(props)=>{
+
+    let {navigation} = props
     let [users,setUsers] = useState()
 
 
-    useEffect(()=>{
+    useEffect(() => {
         getUsers().then(value => setUsers([...value]))
-    },[])
+    }, []);
 
-    return (<View style={[styles.mainBox]}>
 
+    return (
+        <View style={[styles.mainBox]}>
       <FlatList
           data={users}
           keyExtractor={item => ''+ item.id}
-          renderItem={({item})=> {
-        return    <User item={item} />
-      }}
+          renderItem={({item})=> <User item={item} nav={navigation}/>}
         />
-
     </View>)
 }
 
 export default Users
+
 let styles = StyleSheet.create({
 
 })

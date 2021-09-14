@@ -1,15 +1,21 @@
-import React, {useEffect, useState} from "react";
-import {FlatList, StyleSheet} from "react-native";
-import {View,Button,TouchableOpacity,Text} from "react-native";
+import React from "react";
+import {StyleSheet} from "react-native";
+import {View,Button,Text} from "react-native";
 
 
-const User=({item})=>{
+const User=(props)=>{
 
-    return (<View style={[styles.userBox,styles.margins]}>
+    let {item,nav:{navigate}} = props
 
+    let onPress =()=>{
+        navigate('user Details',{data:item})
+    }
+
+
+    return <View style={[styles.userBox]}>
         <Text>{item.name} and smth</Text>
-
-    </View>)
+        <Button onPress={onPress} title={'user details'}/>
+    </View>
 }
 export default User
 
